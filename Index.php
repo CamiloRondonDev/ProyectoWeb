@@ -30,7 +30,7 @@
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
       
-                      <form action="Insert_User.php" method="post">
+                      <form action="login.php" method="get">
       
                         <div class="d-flex align-items-center mb-3 pb-1">
                           <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -42,12 +42,12 @@
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
       
                         <div class="form-outline mb-4">
-                          <input name="Email" type="email" id="form2Example17" class="form-control form-control-lg" />
+                          <input name="Email_Login" type="email" id="form2Example17" class="form-control form-control-lg" />
                           <label class="form-label" for="form2Example17">Email address</label>
                         </div>
       
                         <div class="form-outline mb-4">
-                          <input name="Password" type="password" id="form2Example27" class="form-control form-control-lg" />
+                          <input name="Password_Login" type="password" id="form2Example27" class="form-control form-control-lg" />
                           <label class="form-label" for="form2Example27">Password</label>
                         </div>
       
@@ -56,7 +56,7 @@
                         </div>
       
                         <a class="small text-muted" href="#!">Olvide mi contraseña</a>
-                        <p class="mb-5 pb-lg-2" style="color: #393f81;">No tienes Cuenta? <a href="ResgistroLogin/RegistroLogin.html"
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">No tienes Cuenta? <a href="RegistroLogin.php"
                             style="color: #393f81;">Registrate aqui</a></p>
                         <a href="#!" class="small text-muted">Terms of use.</a>
                         <a href="#!" class="small text-muted">Privacy policy</a>
