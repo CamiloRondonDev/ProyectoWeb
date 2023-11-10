@@ -1,19 +1,15 @@
 <?php
 include 'conexion.php';
 
-
-
 $userPassword = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $mail = $_GET['Email_Login'];
     $pass = $_GET['Password_Login'];
+   # echo "entro 222";
    
     if($mail == "" || $pass == "" ){
-
-        echo "<script>alert('Ingrese todos los datos');</script>";
         exit();
-
     }
 
 $sql = "select UserName, UserPass , UserMail from usuarios where UserMail = '$mail'";
@@ -29,26 +25,25 @@ if ($resultado) {
         $userPassword = $fila['UserPass'];
         
         // Haz lo que necesites con estos valores
-        echo "Nombre de usuario: " . $userName . ", Email: " . $userEmail . ", Contraseña: " . $userPassword . "<br>";
+        
+        #echo  "Nombre de usuario: " . $userName . ", Email: " . $userEmail . ", Contraseña: " . $userPassword ;
     }
+    
 
     if($pass == $userPassword ){
-        echo "Usuarios si esta registrado";
-        header("Location: ventas.php");
-        exit(); 
+        $respuesta = 1;
+        $respuesta_json['estado'] = 1;     
     }else{
-        echo "Usuarios no esta registrado";
-        echo "<script>alert('Contraseña incorrecta');</script>";
-        header("Location: index.php");
-        #exit(); 
+        $respuesta = 0;
+        $respuesta_json['estado'] = 0;
     }
-
 
 } else {
     // La consulta falló
-    echo "Error al ejecutar la consulta: " . $conn->error;
+   # echo "Error al ejecutar la consulta: " . $conn->error;
 }
 
 // Cerrar la conexión
+echo $respuesta;
 $conn->close();
 }
