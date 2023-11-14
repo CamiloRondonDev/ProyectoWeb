@@ -1,4 +1,4 @@
-console.log("entro js_")
+console.log("entro js_f")
 
 $(document).ready(function() {
     $('#loginForm').submit(function(e) {
@@ -6,7 +6,7 @@ $(document).ready(function() {
         e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
         $.ajax({
             type: 'GET',
-            url: 'login.php',
+            url: 'modelo/login.php',
             data: $(this).serialize(),
             success: function(response) {
              console.log(response)
