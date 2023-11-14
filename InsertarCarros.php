@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <title>Registro</title>
+    <title>Crear</title>
 </head>
 <body>
 
@@ -28,55 +29,60 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form action="modelo/Insert_User.php" method="post">
+            <h2 class="fw-bold mb-5">Insertar Carro</h2>
+            <form id="RegistroItemsForm" >
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input name="nombre_Registro" type="text" id="form3Example1" class="form-control" />
+                    <input name="nombre_Carro" type="text" id="form3Example1" class="form-control" />
                     <label class="form-label" for="form3Example1">Nombre</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input name="cedula_Registro"  type="text" id="form3Example2" class="form-control" />
-                    <label class="form-label" for="form3Example2">Cedula</label>
+                    <input name="Descripcion_Carro"  type="text" id="form3Example2" class="form-control" />
+                    <label class="form-label" for="form3Example2">Descripcion</label>
                   </div>
                 </div>
               </div>
   
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input name="email_Registro" type="email" id="form3Example3" class="form-control" />
-                <label  class="form-label" for="form3Example3">Email</label>
+                <input name="Marca_Carro" type="text" id="form3Example3" class="form-control" />
+                <label  class="form-label" for="form3Example3">Marca</label>
               </div>
   
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input name="password_Registro" type="password" id="form3Example4" class="form-control" />
-                <label  class="form-label" for="form3Example4">Password</label>
+                <input name="Color_Carro" type="text" id="form3Example4" class="form-control" />
+                <label  class="form-label" for="form3Example4">Color</label>
               </div>
 
                 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input name="telefono_Registro" type="text" id="form3Example5" class="form-control" />
-                <label  class="form-label" for="form3Example4">telefono</label>
+                <input name="Categoria_Carro" type="text" id="form3Example5" class="form-control" />
+                <label  class="form-label" for="form3Example4">Categoría</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input name="Stock_Carro" type="text" id="form3Example3" class="form-control" />
+                <label  class="form-label" for="form3Example3">Stock</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input name="PrecioCompra_Carro" type="text" id="form3Example3" class="form-control" />
+                <label  class="form-label" for="form3Example3">Precio Compra</label>
               </div>
   
-              <!-- Checkbox -->
-              <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                <label class="form-check-label" for="form2Example33">
-                  Subscribe to our newsletter
-                </label>
+              <div class="form-outline mb-4">
+                <input name="PrecioVenta_Carro" type="text" id="form3Example3" class="form-control" />
+                <label  class="form-label" for="form3Example3">Precio Venta</label>
               </div>
-  
+
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign up
-              </button>
+              <button type="submit" class="btn btn-primary btn-block mb-4">Crear</button>
   
               <!-- Register buttons -->
               <div class="text-center">
@@ -104,6 +110,8 @@
     </div>
   </section>
   <!-- Section: Design Block -->
+
+  <Script type="text/javascript" src="script/script.js"></Script>
     
 </body>
 </html>
