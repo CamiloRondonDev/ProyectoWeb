@@ -1,4 +1,4 @@
-console.log("entro js")
+console.log("entro js_")
 
 $(document).ready(function() {
     $('#loginForm').submit(function(e) {
