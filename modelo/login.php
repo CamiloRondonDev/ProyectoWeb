@@ -28,7 +28,6 @@ if ($resultado) {
         
         #echo  "Nombre de usuario: " . $userName . ", Email: " . $userEmail . ", Contraseña: " . $userPassword ;
     }
-    
 
     if($pass == $userPassword ){
         $respuesta = 1;
