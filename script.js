@@ -1,4 +1,4 @@
-console.log("entro js_f")
+console.log("entro js_")
 
 $(document).ready(function() {
     $('#loginForm').submit(function(e) {
@@ -12,7 +12,9 @@ $(document).ready(function() {
              console.log(response)
             if(response == 1){
                 //alert("_Contraseña correcta_")
-                window.location.href = 'Ventas.php';
+                var correo1 = document.getElementById('correo_enviar');
+                var correo = correo1.value;
+                window.location.href = 'Ventas.php?correo=' + encodeURIComponent(correo);//enviar correo a la vista 
             }else{
                 alert("_Contraseña incorrecta_")
             }

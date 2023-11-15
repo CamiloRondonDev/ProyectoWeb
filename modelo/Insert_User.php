@@ -21,15 +21,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password_Registro'];
     $email = $_POST['email_Registro'];
     $tel = $_POST['telefono_Registro'];
-
+    $rol = $_POST['rol_seleccionado'];
+    
     echo $nombre;
     echo $dni;
     echo $password;
     echo $email;
     echo $tel;
+    echo $rol;
 
-    $sql = "INSERT INTO usuarios (UserName, UserDNI, UserPass, UserMail, UserTel) 
-            VALUES ('$nombre', '$dni' , '$password' , '$email' , '$tel')";
+    $sql = "INSERT INTO usuarios (UserName, UserDNI, UserPass, UserMail, UserTel , userRol) 
+            VALUES ('$nombre', '$dni' , '$password' , '$email' , '$tel' , '$rol')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Registro creado correctamente.";

@@ -65,26 +65,22 @@
                 <label  class="form-label" for="form3Example4">telefono</label>
               </div>
   
-              <!-- Checkbox -->
-              <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                <label class="form-check-label" for="form2Example33">
-                  Subscribe to our newsletter
-                </label>
+              <div class="mb-3">
+                <select class="form-select" id="exampleFormControlSelect1" name="rol_seleccionado">
+                  <option name="Rol_Registro" value="Cliente">Cliente</option>
+                  <option name="Rol_Registro" value="Admin">Admin</option>
+                </select>
+                <label for="exampleFormControlSelect1" class="form-label">Rol de Usuario:</label>
               </div>
+              <br>
+
   
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">
                 Sign up
               </button>
   
-              <!-- Register buttons -->
-              <div class="text-center">
-                <p>or sign up with:</p>
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-facebook-f"></i>
-                </button>
-  
+
                 <button type="button" class="btn btn-link btn-floating mx-1">
                   <i class="fab fa-google"></i>
                 </button>
