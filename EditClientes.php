@@ -44,13 +44,13 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input name="nombre_Registro" type="text" id="form3Example1" class="form-control" />
+                    <input name="nombre_Registro" type="text" id="NombreUsuario" class="form-control" />
                     <label class="form-label" for="form3Example1">Nombre</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                    <input name="cedula_Registro" type="text" id="form3Example2" class="form-control" />
+                    <input name="cedula_Registro" type="text" id="CedulaUsuario" class="form-control" />
                     <label class="form-label" for="form3Example2">Cedula</label>
                   </div>
                 </div>
@@ -58,25 +58,25 @@
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input name="email_Registro" type="email" id="form3Example3" class="form-control" />
+                <input name="email_Registro" type="email" id="EmailUsuario" class="form-control" />
                 <label class="form-label" for="form3Example3">Email</label>
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input name="password_Registro" type="password" id="form3Example4" class="form-control" />
+                <input name="password_Registro" type="text" id="PassUsuario" class="form-control" />
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
 
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input name="telefono_Registro" type="text" id="form3Example5" class="form-control" />
+                <input name="telefono_Registro" type="text" id="TelefonoUsuario" class="form-control" />
                 <label class="form-label" for="form3Example4">telefono</label>
               </div>
 
               <div class="mb-3">
-                <select class="form-select" id="exampleFormControlSelect1" name="rol_seleccionado">
+                <select class="form-select" id="RolUsuario" name="rol_seleccionado">
                   <option name="Rol_Registro" value="Cliente">Cliente</option>
                   <option name="Rol_Registro" value="Admin">Admin</option>
                 </select>

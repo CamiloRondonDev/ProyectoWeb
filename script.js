@@ -1,4 +1,4 @@
-console.log("entro js")
+console.log("entro_carros y login");
 
 $(document).ready(function() {
     $('#loginForm').submit(function(e) {
