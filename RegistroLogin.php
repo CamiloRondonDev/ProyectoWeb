@@ -68,7 +68,6 @@
               <div class="mb-3">
                 <select class="form-select" id="exampleFormControlSelect1" name="rol_seleccionado">
                   <option name="Rol_Registro" value="Cliente">Cliente</option>
-                  <option name="Rol_Registro" value="Admin">Admin</option>
                 </select>
                 <label for="exampleFormControlSelect1" class="form-label">Rol de Usuario:</label>
               </div>
