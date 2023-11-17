@@ -111,7 +111,7 @@
   </section>
   <!-- Section: Design Block -->
 
-  <Script type="text/javascript" src="script/script.js"></Script>
+  <Script type="text/javascript" src="script.js"></Script>
     
 </body>
 </html>

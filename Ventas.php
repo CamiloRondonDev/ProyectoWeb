@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style/Style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="style/Style.css">
   <title>Document</title>
@@ -60,9 +60,9 @@
             
               <div id="Banner" class="mb-3">
                 <select onchange="funcion()" id="crear" class="form-select" id="exampleFormControlSelect1" name="rol_seleccionado" >
-                  <option  value="user">Admin</option>
-                  <option  value="Clientes">Clientes</option>
-                  <option  value="Carros">Carros</option>
+                  <option class="valNul" value="user">Admin</option>
+                  <option class="valNul" value="Clientes">Clientes</option>
+                  <option class="valNul" value="Carros">Carros</option>
                 </select>
               </div>
               <br>

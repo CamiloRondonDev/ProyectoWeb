@@ -3,12 +3,16 @@ var correo1 = document.getElementById('UserLogin');
 var correoConsulta = correo1.textContent;
 //alert(correoConsulta)
 
-function funcion(){
-    var accion = document.getElementById("crear").value; 
+function funcion() {
+    var accion = document.getElementById("crear").value;
     //alert(accion);
-    if(accion == "Carros"){
+    if (accion == "Carros") {
+        document.getElementById("crear").value = "Admin";
+        console.log("sdfsf")
         window.location.href = 'InsertarCarros.php'
-    }else if(accion == "Clientes"){
+
+    } else if (accion == "Clientes") {
+        document.getElementById("crear").value = "Admin";
         window.location.href = 'EditClientes.php'
     }
 }
@@ -34,6 +38,7 @@ $(document).ready(function() {
                 }else{
                     document.getElementById("crear").disabled  = true
                 }
+
             },
             error: function(error) {
                 // Maneja los errores de la petición AJAX
