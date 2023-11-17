@@ -3,6 +3,16 @@ var correo1 = document.getElementById('UserLogin');
 var correoConsulta = correo1.textContent;
 //alert(correoConsulta)
 
+function funcion(){
+    var accion = document.getElementById("crear").value; 
+    //alert(accion);
+    if(accion == "Carros"){
+        window.location.href = 'InsertarCarros.php'
+    }else if(accion == "Clientes"){
+        window.location.href = 'EditClientes.php'
+    }
+}
+
 
 $(document).ready(function() {
     // Cuando el documento esté listo, ejecuta el código
@@ -18,6 +28,12 @@ $(document).ready(function() {
                 // Maneja la respuesta del servidor
                 console.log("Respuesta del servidor:", respuesta);
                 document.getElementById('UserLogin').textContent = respuesta.nombre;
+                if(respuesta.rol ==="Admin"){
+                   // alert(respuesta.rol);
+                    document.getElementById("crear").disabled  = false
+                }else{
+                    document.getElementById("crear").disabled  = true
+                }
             },
             error: function(error) {
                 // Maneja los errores de la petición AJAX

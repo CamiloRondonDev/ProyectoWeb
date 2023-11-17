@@ -54,10 +54,19 @@
           </div>
           
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success">Search</button>
+            <input class="form-control me-2 buscar" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success disabled ">Search</button>
             
-            <button class="btn btn-info"><a id="crear" href="InsertarCarros.php">CREAR</a></button>
+            
+              <div id="Banner" class="mb-3">
+                <select onchange="funcion()" id="crear" class="form-select" id="exampleFormControlSelect1" name="rol_seleccionado" >
+                  <option  value="user">Admin</option>
+                  <option  value="Clientes">Clientes</option>
+                  <option  value="Carros">Carros</option>
+                </select>
+              </div>
+              <br>
+
           </form>
         </div>
       </div>
