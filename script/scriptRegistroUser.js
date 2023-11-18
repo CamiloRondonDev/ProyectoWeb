@@ -1,4 +1,4 @@
-alert("entro_js_R_user");
+//alert("entro_js_R_user");
 
 $(document).ready(function () {
 

@@ -33,8 +33,4 @@ echo $respuestaJson;
 $conn->close();
 }
 
-
-
-
-
 ?>

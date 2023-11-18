@@ -4,6 +4,7 @@ console.log("entro_Consulta_user_")
 document.getElementById("EmailUsuario").setAttribute("disabled", "disabled");
 var usuarioId = "";
 
+
 $(document).ready(function () {
     // Define la función para la petición AJAX
     function RealizarConsultaClientes() {
@@ -80,7 +81,7 @@ $(document).ready(function () {
 
     $('#ActualizarUsuarios').submit(function(e) {
         document.getElementById("EmailUsuario").removeAttribute("disabled");
-        e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+        e.preventDefault(); 
         $.ajax({
             type: 'POST',
             url: 'modelo/ActuaUsuarios.php',
@@ -102,6 +103,40 @@ $(document).ready(function () {
         });
         document.getElementById("EmailUsuario").setAttribute("disabled", "disabled");
     });
+   
+    function eliminarUser(user){
+       
+        $.ajax({
+            type: 'POST',
+            url: 'modelo/EliminarUser.php',
+            data: { idUser: user }, // Datos que se enviarán al servidor
+            success: function(response) {
+             console.log(response)
+             if(response == 1){
+                alert("Usuario Eliminado Correctamente");
+                location.reload();
+             }else{
+                alert("Error interno");
+             }
+            },
+            error: function (error) {
+                // Maneja los errores de la petición AJAX
+                console.error('Error en la petición AJAX:', error);
+            }
+        });
+
+
+
+
+    }
+
+    var boton = document.getElementById("miBoton");
+    boton.addEventListener("click", function (event) {
+        eliminarUser(usuarioId);
+    });
+
+
 
 });
+
 
