@@ -58,7 +58,7 @@
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input name="email_Registro" type="email" id="EmailUsuario" class="form-control" />
+                <input  name="email_Registro" type="email" id="EmailUsuario" class="form-control" />
                 <label class="form-label" for="form3Example3">Email</label>
               </div>
 
@@ -89,6 +89,10 @@
               <button type="submit" class="btn btn-primary btn-block mb-4">
                 Actualizar
               </button>
+
+              <div>
+                <h2 id="Mensaje"></h2>
+              </div>
               
 
 
@@ -113,7 +117,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="scriptConsClientes.js"></script>
+  <script type="text/javascript" src="script/scriptConsClientes.js"></script>
 </body>
 
 </html>

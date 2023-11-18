@@ -8,23 +8,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email_Registro'];
     $tel = $_POST['telefono_Registro'];
     $rol = $_POST['rol_seleccionado'];
-    #$UserId = $_POST['userId'];
+
+    if($nombre == "" || $dni == "" || $password == "" || $email == "" || $tel == "" || $rol == ""){
+        echo 2;
+    }else{
+
+        $sql = "update usuarios SET UserName = '$nombre',  UserDNI = '$dni', UserPass = '$password', UserMail = '$email',  UserTel = '$tel',  userRol = '$rol'
+        where UserMail = '$email'";
     
-    echo $nombre;
-    echo $dni;
-    echo $password;
-    echo $email;
-    echo $tel;
-    echo $rol;
-    #echo "#$UserId#";
-
-   $sql = "update usuarios SET UserName = '$nombre',  UserDNI = '$dni', UserPass = '$password', UserMail = '$email',  UserTel = '$tel',  userRol = '$rol'
-    where UserMail = '$email'";
-
-    if ($conn->query($sql) === TRUE) {
-    echo "ACTUALIZADO";
-    } else {
-        echo "Error al actualizar: " . $conn->error;
+        if ($conn->query($sql) === TRUE) {
+            echo 1;
+        } else {
+            echo "Error al actualizar: " . $conn->error;
+        }
     }
 
     // Cerrar la conexión

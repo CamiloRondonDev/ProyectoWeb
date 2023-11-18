@@ -40,11 +40,11 @@
                           </span>
                         </div>
       
-                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Acceda con su cuenta</h5>
       
                         <div class="form-outline mb-4">
                           <input name="Email_Login" type="email" id="correo_enviar" class="form-control form-control-lg" />
-                          <label class="form-label">Email address</label>
+                          <label class="form-label">Email </label>
                         </div>
       
                         <div class="form-outline mb-4">
@@ -57,7 +57,7 @@
                         </div>
                         <div id="mensaje"></div>
       
-                        <a class="small text-muted" href="#!">Olvide mi contraseña</a>
+                       <!-- <a class="small text-muted" href="#!">Olvide mi contraseña</a> -->
                         <p class="mb-5 pb-lg-2" style="color: #393f81;">No tienes Cuenta? <a href="RegistroLogin.php"
                             style="color: #393f81;">Registrate aqui</a></p>
                         <a href="#!" class="small text-muted">Terms of use.</a>

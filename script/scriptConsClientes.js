@@ -1,5 +1,7 @@
 //alert("INGRESO CONSULTA")
-console.log("entro_Consulta_user")
+console.log("entro_Consulta_user_")
+
+document.getElementById("EmailUsuario").setAttribute("disabled", "disabled");
 var usuarioId = "";
 
 $(document).ready(function () {
@@ -77,6 +79,7 @@ $(document).ready(function () {
 
 
     $('#ActualizarUsuarios').submit(function(e) {
+        document.getElementById("EmailUsuario").removeAttribute("disabled");
         e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
         $.ajax({
             type: 'POST',
@@ -84,12 +87,20 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function(response) {
              console.log(response)
+             if(response == 1){
+                alert("Usuario Actualizado Correctamente");
+             }else if(response == 2){
+                alert("Todos los campos son obligatorios");
+             }else{
+                alert("Error interno");
+             }
             },
             error: function (error) {
                 // Maneja los errores de la petición AJAX
                 console.error('Error en la petición AJAX:', error);
             }
         });
+        document.getElementById("EmailUsuario").setAttribute("disabled", "disabled");
     });
 
 });

@@ -28,7 +28,7 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <h2 class="fw-bold mb-5">Registro Nuevo Usuario</h2>
             <form action="modelo/Insert_User.php" method="post">
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
@@ -69,14 +69,14 @@
                 <select class="form-select" id="exampleFormControlSelect1" name="rol_seleccionado">
                   <option name="Rol_Registro" value="Cliente">Cliente</option>
                 </select>
-                <label for="exampleFormControlSelect1" class="form-label">Rol de Usuario:</label>
+                <label for="exampleFormControlSelect1" class="form-label">Rol de Usuario</label>
               </div>
               <br>
 
   
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign up
+                Registrar
               </button>
   
 

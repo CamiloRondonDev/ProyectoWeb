@@ -22,21 +22,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email_Registro'];
     $tel = $_POST['telefono_Registro'];
     $rol = $_POST['rol_seleccionado'];
-    
-    echo $nombre;
-    echo $dni;
-    echo $password;
-    echo $email;
-    echo $tel;
-    echo $rol;
 
-    $sql = "INSERT INTO usuarios (UserName, UserDNI, UserPass, UserMail, UserTel , userRol) 
-            VALUES ('$nombre', '$dni' , '$password' , '$email' , '$tel' , '$rol')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Registro creado correctamente.";
+    if ($nombre == "" || $dni == "" || $password == "" || $email == "" || $tel == "" || $rol == "") {
+        echo '<script>alert("Todos los campos son obligatorios");</script>';
     } else {
-        echo "Error al crear el registro: " . $conn->error;
+        
+        $sql = "INSERT INTO usuarios (UserName, UserDNI, UserPass, UserMail, UserTel , userRol) 
+        VALUES ('$nombre', '$dni' , '$password' , '$email' , '$tel' , '$rol')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Registro creado correctamente.";
+        } else {
+            echo "Error al crear el registro: " . $conn->error;
+        }
     }
 
     // Cerrar la conexión
