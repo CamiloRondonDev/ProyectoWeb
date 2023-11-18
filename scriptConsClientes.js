@@ -1,4 +1,6 @@
 //alert("INGRESO CONSULTA")
+console.log("entro_Consulta_user")
+var usuarioId = "";
 
 $(document).ready(function () {
     // Define la función para la petición AJAX
@@ -46,7 +48,6 @@ $(document).ready(function () {
         $('#NombreUsuario').val(res[0].UserName);
         $('#CedulaUsuario').val(res[0].UserDNI);
         $('#EmailUsuario').val(res[0].UserMail);
-       // $('#EmailUsuario').val(res[0].UserEstatus);
         $('#PassUsuario').val(res[0].UserPass);
         $('#TelefonoUsuario').val(res[0].UserTel);
         $('#RolUsuario').val(res[0].userRol);
@@ -68,12 +69,28 @@ $(document).ready(function () {
 
         // Agrega un evento de cambio al combobox para capturar el ID del usuario seleccionado
         selectUsuarios.change(function () {
-            var usuarioId = $(this).val();
+             usuarioId = $(this).val();
             //console.log('ID del usuario seleccionado:', usuarioId);
             ConsultarUsuariosID(usuarioId);
         });
     }
-    
+
+
+    $('#ActualizarUsuarios').submit(function(e) {
+        e.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+        $.ajax({
+            type: 'POST',
+            url: 'modelo/ActuaUsuarios.php',
+            data: $(this).serialize(),
+            success: function(response) {
+             console.log(response)
+            },
+            error: function (error) {
+                // Maneja los errores de la petición AJAX
+                console.error('Error en la petición AJAX:', error);
+            }
+        });
+    });
 
 });
 
