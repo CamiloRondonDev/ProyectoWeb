@@ -114,7 +114,7 @@ $(document).ready(function () {
              console.log(response)
              if(response == 1){
                 alert("Usuario Eliminado Correctamente");
-                location.reload();
+                location.reload();//recargar la paguina
              }else{
                 alert("Error interno");
              }

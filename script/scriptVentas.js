@@ -3,6 +3,7 @@ var correo1 = document.getElementById('UserLogin');
 var correoConsulta = correo1.textContent;
 //alert(correoConsulta)
 
+//TOMA EL VALOR DEL DESPLEGABLE DE VENTAS Y LLAMA A SY RESPECTIVA PANTALLA
 function funcion() {
     var accion = document.getElementById("crear").value;
     //alert(accion);
@@ -19,9 +20,8 @@ function funcion() {
 
 
 $(document).ready(function() {
-    // Cuando el documento esté listo, ejecuta el código
-
     // Define la función para la petición AJAX
+    //REALIZA LA CONSULTA DEL USUARIO LOGEADO POR CORREO Y LO MUESTRA EN EL BANNER DE LA VISTA
     function realizarConsulta(correo) {
         $.ajax({
             type: 'GET',
@@ -46,7 +46,30 @@ $(document).ready(function() {
             }
         });
     }
-
-    // Ejemplo de cómo llamar a la función con un correo específico
     realizarConsulta(correoConsulta);
+
+    //ESTA FUNCION SE ENCARGA DE REALIZAR LA CONSULTA DE LOS AUTOMOVILES DISPONIBLES PARA LA VENTA
+    function ConsultaAutos() {
+        var nCarro = $('#nCarro');
+        $.ajax({
+            type: 'GET',
+            url: 'modelo/ConsultaCarros_bd.php', // Archivo PHP para manejar la consulta
+            dataType: 'json',
+            //data: $(this).serialize(),
+            success: function(respuesta) {
+                //Maneja la respuesta del servidor 
+                
+                console.log("Respuesta del servidor2:", respuesta[0].nombreItem);
+                nuevaOpcion =  respuesta[0].nombreItem;
+                nCarro.append(nuevaOpcion);
+            },
+            error: function(error) {
+                // Maneja los errores de la petición AJAX
+                console.error('Error en la petición AJAX:', error);
+            }
+        });
+    }
+    ConsultaAutos();
+
+
 });

@@ -74,10 +74,11 @@
   </div>
   <!-- final menu  -->
   <br>
-  <!-- vehiculos -->
+  <!-- vehiculos *********************-->
   <div class="container">
-    <div class="row">
-      <div class="col-md-4 text-center text-bg-secondary p-3">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <div class="mb-4 text-bg-secondary p-3">
         <img src="img/ChevroletCamaroXL1.PNG" class="img-fluid">
         <h2>Nombre carro</h2>
         <p>$.0000</p>
@@ -88,8 +89,31 @@
         </a>
       </div>
     </div>
+
+    <!-- Agrega más vehículos con la misma estructura -->
+    <div class="col-md-4 text-center">
+      <div class="mb-4 text-bg-secondary p-3">
+      <img src="img/ChevroletCamaroXL1.PNG" class="img-fluid">
+        <h2 id="nCarro">Nombre carro</h2>
+        <p>$.0000</p>
+        <a href="" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
+          </svg>
+        </a>
+        <!-- Contenido del segundo vehículo -->
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <div class="mb-4 text-bg-secondary p-3">
+        <!-- Contenido del tercer vehículo -->
+      </div>
+    </div>
   </div>
-  <!-- fin vehiculos -->
+</div>
+
+  <!-- fin vehiculos *****************-->
 
   </div>
 
