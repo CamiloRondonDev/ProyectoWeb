@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("La conexión falló: " . $conn->connect_error);
 }
 
-echo "Conexión exitosa\n";
+#echo "Conexión exitosa\n";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre_Registro'];
@@ -24,14 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rol = $_POST['rol_seleccionado'];
 
     if ($nombre == "" || $dni == "" || $password == "" || $email == "" || $tel == "" || $rol == "") {
-        echo '<script>alert("Todos los campos son obligatorios");</script>';
+        echo 2;
     } else {
-        
         $sql = "INSERT INTO usuarios (UserName, UserDNI, UserPass, UserMail, UserTel , userRol) 
         VALUES ('$nombre', '$dni' , '$password' , '$email' , '$tel' , '$rol')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Registro creado correctamente.";
+            echo 1;
         } else {
             echo "Error al crear el registro: " . $conn->error;
         }
@@ -39,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Cerrar la conexión
     $conn->close();
-    header("Location: ../index.php");
     exit(); 
 }
 
