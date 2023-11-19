@@ -74,13 +74,12 @@
   </div>
   <!-- final menu  -->
   <br>
-  <!-- vehiculos *********************-->
+  <!-- Mostrar vehiculos *********************-->
   <div class="container">
     <div class="row">
       
     </div>
-
-    <!-- fin vehiculos *****************-->
+    <!-- fin Mostrar vehiculos *****************-->
 
   </div>
 
