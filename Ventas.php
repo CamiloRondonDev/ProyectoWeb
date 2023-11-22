@@ -63,6 +63,7 @@
                 <option class="valNul" value="user">Admin</option>
                 <option class="valNul" value="Clientes">Clientes</option>
                 <option class="valNul" value="Carros">Carros</option>
+                <option class="valNul" value="Ventas">Ventas</option>
               </select>
             </div>
             <br>

@@ -5,7 +5,7 @@ $mail = $_GET['correo'];
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-$sql = "select UserName, userRol from usuarios where UserMail = '$mail'";
+$sql = "select UserName, userRol, UserDNI from usuarios where UserMail = '$mail'";
 
 $resultado = $conn->query($sql);
 
@@ -15,10 +15,12 @@ if ($resultado) {
         // $fila contendrá una fila de resultados
         $userName = $fila['UserName'];
         $userRol = $fila['userRol'];
+        $userDNI = $fila['UserDNI'];
         // Haz lo que necesites con estos valores
         $respuesta =  array(
             'nombre' => $userName,
-            'rol'=> $userRol
+            'rol'=> $userRol,
+            'UserDNI'=> $userDNI
         );
     }
     $respuestaJson = json_encode($respuesta);

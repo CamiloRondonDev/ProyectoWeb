@@ -1,6 +1,8 @@
-console.log("entro_js_ventas")
+console.log("entro_js_ventas_")
 var correo1 = document.getElementById('UserLogin');
 var correoConsulta = correo1.textContent;
+var contadorCarros;
+var dniUser;
 //var vehiculos = [];
 //alert(correoConsulta)
 
@@ -16,6 +18,8 @@ function funcion() {
     } else if (accion == "Clientes") {
         document.getElementById("crear").value = "Admin";
         window.location.href = 'EditClientes.php'
+    }else if(accion == "Ventas"){
+      window.location.href = 'RegistroVentas.php'
     }
 }
 
@@ -33,6 +37,8 @@ $(document).ready(function() {
                 // Maneja la respuesta del servidor
                 console.log("Respuesta del servidor:", respuesta);
                 document.getElementById('UserLogin').textContent = respuesta.nombre;
+                dniUser = respuesta.UserDNI;
+                console.log("#####"+dniUser  + "###");
                 if(respuesta.rol ==="Admin"){
                    // alert(respuesta.rol);
                     document.getElementById("crear").disabled  = false
@@ -51,7 +57,7 @@ $(document).ready(function() {
 
     //ESTA FUNCION SE ENCARGA DE REALIZAR LA CONSULTA DE LOS AUTOMOVILES DISPONIBLES PARA LA VENTA
     function ConsultaAutos() {
-        var nCarro = $('#nCarro');
+        //var nCarro = $('#nCarro');
         $.ajax({
             type: 'GET',
             url: 'modelo/ConsultaCarros_bd.php', // Archivo PHP para manejar la consulta
@@ -64,7 +70,7 @@ $(document).ready(function() {
                 
                 console.log("Respuesta del servidor2:", respuesta[0].nombreItem);
                 nuevaOpcion =  respuesta[0].nombreItem;
-                nCarro.append(nuevaOpcion);
+               // nCarro.append(nuevaOpcion);
             },
             error: function(error) {
                 // Maneja los errores de la petición AJAX
@@ -98,7 +104,7 @@ $(document).ready(function() {
         selectUsuarios.append(html);
         }
       }
-      
+
     // Agregar evento de clic al contenedor que envuelve los elementos de vehículos
   $('.row').on('click', '.btn-primary', function(e) {
     // Obtener el ID del vehículo desde el atributo data-id
@@ -107,7 +113,58 @@ $(document).ready(function() {
 
     // Hacer algo con el ID, por ejemplo, imprimirlo en la consola
     console.log('ID del vehículo seleccionado:', idVehiculo);
+    ConsultaAutosId(idVehiculo);
+    
   });
+
+  function ConsultaAutosId(idCarro) {
+    $.ajax({
+        type: 'GET',
+        url: 'modelo/ConsultaCarros_id_bd.php', // Archivo PHP para manejar la consulta
+        dataType: 'json',
+        data: { id: idCarro, accion:"si-id"}, // Datos que se enviarán al servidor
+        success: function(respuesta) {
+            //Maneja la respuesta del servidor
+            console.log(respuesta)
+            console.log("Respuesta del servidor3:", respuesta[0].nombreItem);
+            var idCarro = respuesta[0].id;
+            var NombreCarro = respuesta[0].nombreItem;
+            var colorCarro = respuesta[0].colorItem;
+            var dniClientes = dniUser;
+            var precioCarro = respuesta[0].precioItem;
+            RegistroVentaCarro(idCarro,NombreCarro,colorCarro,dniClientes,precioCarro)
+        },
+        error: function(error) {
+            // Maneja los errores de la petición AJAX
+            console.error('Error en la petición AJAX:', error);
+        }
+    });
+}
+
+  function RegistroVentaCarro(idCarro, NombreCarro, colorCarro, dniClientes,precioCarro) {
+    console.log(idCarro + NombreCarro + colorCarro + dniClientes + precioCarro )
+    $.ajax({
+      type: 'POST',
+      url: 'modelo/InsertRegistroVenta_bd.php', // Archivo PHP para manejar la consulta
+      //dataType: 'json',
+      data: { idCarro: idCarro,
+              NombreCarro: NombreCarro,
+              colorCarro : colorCarro,
+              dniClientes : dniClientes,
+              valTotal : 	precioCarro
+            }, // Datos que se enviarán al servidor
+      success: function (respuesta) {
+        console.log("Respuesta del servidor4:" , respuesta);
+        if(respuesta == 1){
+          alert("Venta exitosa")
+
+        }
+      },
+      error: function (error) {
+        console.error('Error en la petición AJAX:', error);
+      }
+    });
+  }
 
 
 });
