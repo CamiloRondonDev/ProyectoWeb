@@ -18,3 +18,12 @@ h1{
 #miBoton{
     height: 100px;
 }
+#titulo{
+    background-color: royalblue;
+}
+.BannerVentas{
+    margin-right: 20px;
+    padding: 7px;
+    background-color: rgb(191, 205, 243);
+    
+}

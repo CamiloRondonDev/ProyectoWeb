@@ -24,26 +24,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="Index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a target="_blank" class="nav-link" href="https://api.whatsapp.com/send?phone=573219255328&text=Estoy%20interesado%20en%20cotizar%20carro.">Contacto</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+                Redes
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a target="_blank" class="dropdown-item" href="https://www.facebook.com/camilo.ardila.71404/">Facebook</a></li>
+                <li><a target="_blank" class="dropdown-item" href="https://www.linkedin.com/in/camilorondondev/">linkedin</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="mailto:camiloanla@gmail.com">Gmail</a></li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
           <div class="BannerVentas">
@@ -54,8 +51,8 @@
           </div>
 
           <form class="d-flex" role="search">
-            <input class="form-control me-2 buscar" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success disabled ">Search</button>
+           <!-- <input class="form-control me-2 buscar" type="search" placeholder="Search" aria-label="Search">
+            <!--<button class="btn btn-outline-success disabled ">Search</button> -->
 
 
             <div id="Banner" class="mb-3">
