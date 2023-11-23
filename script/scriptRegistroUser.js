@@ -15,7 +15,7 @@ $(document).ready(function () {
                 } else if (response == 2) {
                     alert("Todos los campos son obligatorios");
                 } else {
-                    alert("Error interno");
+                    alert("Correo ya registrado");
                 }
             },
             error: function (error) {
