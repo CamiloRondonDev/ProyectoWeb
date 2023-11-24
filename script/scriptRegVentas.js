@@ -23,9 +23,49 @@ $(document).ready(function() {
 
 });
 
+
+
+document.getElementById('downloadPdfBtn').addEventListener('click', function () {
+    const element = document.getElementById('pdf');  // ID de la tabla o contenedor HTML
+    html2pdf(element);
+});
+
+function generarExcel() {
+    // Obtener la tabla y el cuerpo de la tabla
+    const tabla = document.getElementById("listaVentas");
+    const cuerpoTabla = tabla.getElementsByTagName('tbody')[0];
+
+    // Crear una matriz para almacenar los datos
+    const datos = [];
+
+    // Agregar títulos de columna como la primera fila
+    const titulosColumnas = [];
+    for (let i = 0; i < tabla.rows[0].cells.length; i++) {
+        titulosColumnas.push(tabla.rows[0].cells[i].textContent);
+    }
+    datos.push(titulosColumnas);
+
+    // Iterar sobre las filas de la tabla y almacenar los datos en la matriz
+    for (let i = 0; i < cuerpoTabla.rows.length; i++) {
+        const fila = cuerpoTabla.rows[i];
+        const filaDatos = [];
+        for (let j = 0; j < fila.cells.length; j++) {
+            filaDatos.push(fila.cells[j].textContent);
+        }
+        datos.push(filaDatos);
+    }
+
+    // Crear un objeto de trabajo de Excel
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(datos), 'ListaVentas');
+
+    // Guardar el archivo Excel
+    XLSX.writeFile(wb, 'ListaVentas.xlsx');
+}
+document.getElementById('botonGenerarExcel').addEventListener('click', generarExcel);
+
+
 function listar(data){
-
-
     // Obtener la tabla y el cuerpo de la tabla
     const tabla = document.getElementById("listaVentas").getElementsByTagName('tbody')[0];
 
@@ -49,8 +89,3 @@ function listar(data){
     });
 
 }
-
-document.getElementById('downloadPdfBtn').addEventListener('click', function () {
-    const element = document.getElementById('pdf');  // ID de la tabla o contenedor HTML
-    html2pdf(element);
-});
