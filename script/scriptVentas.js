@@ -1,8 +1,9 @@
-console.log("entro_js_ventas_")
+console.log("entro_js_ventas")
 var correo1 = document.getElementById('UserLogin');
 var correoConsulta = correo1.textContent;
 var contadorCarros;
 var dniUser;
+var nameUser;
 
 //TOMA EL VALOR DEL DESPLEGABLE DE VENTAS Y LLAMA A SY RESPECTIVA PANTALLA
 function funcion() {
@@ -36,6 +37,7 @@ $(document).ready(function() {
                 console.log("Respuesta del servidor:", respuesta);
                 document.getElementById('UserLogin').textContent = respuesta.nombre;
                 dniUser = respuesta.UserDNI;
+                nameUser = respuesta.nombre;
                 console.log("#####"+dniUser  + "###");
                 if(respuesta.rol ==="Admin"){
                    // alert(respuesta.rol);
@@ -130,9 +132,9 @@ $(document).ready(function() {
             var idCarro = respuesta[0].id;
             var NombreCarro = respuesta[0].nombreItem;
             var colorCarro = respuesta[0].colorItem;
-            var dniClientes = dniUser;
+            var nameComprador = nameUser;
             var precioCarro = respuesta[0].precioItem;
-            RegistroVentaCarro(idCarro,NombreCarro,colorCarro,dniClientes,precioCarro)
+            RegistroVentaCarro(idCarro,NombreCarro,colorCarro,nameComprador,precioCarro)
         },
         error: function(error) {
             // Maneja los errores de la petición AJAX
@@ -141,8 +143,8 @@ $(document).ready(function() {
     });
 }
 
-  function RegistroVentaCarro(idCarro, NombreCarro, colorCarro, dniClientes,precioCarro) {
-    console.log(idCarro + NombreCarro + colorCarro + dniClientes + precioCarro )
+  function RegistroVentaCarro(idCarro, NombreCarro, colorCarro, nombreCliente,precioCarro) {
+    console.log(idCarro + NombreCarro + colorCarro + nombreCliente + precioCarro )
     $.ajax({
       type: 'POST',
       url: 'modelo/InsertRegistroVenta_bd.php', // Archivo PHP para manejar la consulta
@@ -150,7 +152,7 @@ $(document).ready(function() {
       data: { idCarro: idCarro,
               NombreCarro: NombreCarro,
               colorCarro : colorCarro,
-              dniClientes : dniClientes,
+              nameClientes : nombreCliente,
               valTotal : 	precioCarro
             }, // Datos que se enviarán al servidor
       success: function (respuesta) {

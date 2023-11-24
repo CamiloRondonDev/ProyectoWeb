@@ -13,8 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $vPreCompraCarro = $_POST['PrecioCompra_Carro'];
     $vPreVentaCarro = $_POST['PrecioVenta_Carro'];
 
+    if($vNombreCarro == "" || $vDescCarro =="" ||  $vMarcaCarro == "" ||   $vColorCarro  == "" ||  $vCatCarro == "" ||
+    $vStockCarro == "" ||   $vPreCompraCarro == "" ||  $vPreVentaCarro ==""){
+        $resul = 2;
+    }else if(!is_numeric($vStockCarro) || !is_numeric($vPreCompraCarro) || !is_numeric($vPreVentaCarro)){
+        $resul = 3;
+    }else{
 
-    $sql = "INSERT INTO itemscars (	nombreItem, descripcionItem, precioItem, colorItem,
+        $sql = "INSERT INTO itemscars (	nombreItem, descripcionItem, precioItem, colorItem,
             marcaItem,costoItem,stockItem,categoriaItem) 
             VALUES ('$vNombreCarro', '$vDescCarro' , $vPreVentaCarro , '$vColorCarro' , '$vMarcaCarro' ,
              $vPreCompraCarro , $vStockCarro , '$vCatCarro')";
@@ -26,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error al crear el registro: " . $conn->error;
         $resul = 0;
     }
+    }
+
 
     // Cerrar la conexión
 

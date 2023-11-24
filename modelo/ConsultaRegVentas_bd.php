@@ -8,7 +8,7 @@ $sql = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-    $sql = "select idCompra, dniCliente, fechaVenta, carroCompra, colorCarro, idCarro, valTotal from registrocompra";
+    $sql = "select idCompra, NameCliente, fechaVenta, carroCompra, colorCarro, idCarro, valTotal from registrocompra";
 
     $resultado = $conn->query($sql);
 

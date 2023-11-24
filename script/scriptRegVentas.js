@@ -81,7 +81,7 @@ function listar(data){
 
         // Llenar celdas con valores
         celdaIdVenta.textContent = venta.idCompra;
-        celdaComprador.textContent = venta.dniCliente;
+        celdaComprador.textContent = venta.NameCliente;
         celdaCarros.textContent = venta.carroCompra;
         celdaValorTotal.textContent = venta.valTotal;
         Color_Carro.textContent = venta.colorCarro;

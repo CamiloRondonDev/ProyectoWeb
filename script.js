@@ -1,4 +1,4 @@
-console.log("entro_carros");
+console.log("entro_carros_");
 
 $(document).ready(function() {
     $('#loginForm').submit(function(e) {
@@ -33,13 +33,31 @@ $(document).ready(function() {
              console.log(response)
             if(response == 1){
                 alert("_Registro insertado_")
-                //window.location.href = 'Ventas.php';
+                Limpiar();
+               // window.location.href = 'Ventas.php';
+            }else if(response == 2){
+                alert("Ingresa todos los valores")
+            }else if(response == 3){
+                alert("Hay datos que solo pueden ser numericos")
             }else{
-                alert("_registro no insertado_")
+                alert("El carro ya existe")
             }
             }
         });
     });
 
 }); 
+
+function Limpiar(){
+    document.getElementById("form3Example5").value = "";
+    document.getElementById("form3Example1").value = "";
+    document.getElementById("form3Example2").value = "";
+    document.getElementById("form3Example4").value = "";
+    document.getElementById("form3Example3").value = "";
+    document.getElementById("form3Example5").value = "";
+    document.getElementById("form3Examplec").value = "";
+    document.getElementById("form3Examplem").value = "";
+    document.getElementById("form3Exampler").value = "";
+
+}
 

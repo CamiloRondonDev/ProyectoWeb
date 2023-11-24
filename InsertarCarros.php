@@ -68,34 +68,26 @@
               </div>
 
               <div class="form-outline mb-4">
-                <input name="Stock_Carro" type="text" id="form3Example3" class="form-control" />
+                <input name="Stock_Carro" type="text" id="form3Examplec" class="form-control" />
                 <label class="form-label" for="form3Example3">Stock</label>
               </div>
 
               <div class="form-outline mb-4">
-                <input name="PrecioCompra_Carro" type="text" id="form3Example3" class="form-control" />
+                <input name="PrecioCompra_Carro" type="text" id="form3Examplem" class="form-control" />
                 <label class="form-label" for="form3Example3">Precio Compra</label>
               </div>
 
               <div class="form-outline mb-4">
-                <input name="PrecioVenta_Carro" type="text" id="form3Example3" class="form-control" />
+                <input name="PrecioVenta_Carro" type="text" id="form3Exampler" class="form-control" />
                 <label class="form-label" for="form3Example3">Precio Venta</label>
               </div>
 
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">Crear</button>
 
-              <input type="file" id="inputImage" accept="img">
-              <img id="previewImage" style="max-width: 100%; max-height: 300px;">
-              <button onclick="guardarImagen()">Guardar Imagen</button>
-
 
               <!-- Register buttons -->
               <div class="text-center">
-                <p>or sign up with:</p>
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-facebook-f"></i>
-                </button>
 
                 <button type="button" class="btn btn-link btn-floating mx-1">
                   <i class="fab fa-google"></i>

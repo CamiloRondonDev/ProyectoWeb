@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $idCarro = $_POST['idCarro'];
     $NombreCarro = $_POST['NombreCarro'];
     $colorCarro = $_POST['colorCarro'];
-    $dniClientes = $_POST['dniClientes'];
+    $nameClientes = $_POST['nameClientes'];
     $valTotal = $_POST['valTotal'];
 
 
@@ -14,8 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     #    echo 2;
     #} else {
 
-        $sql = "INSERT INTO registrocompra (dniCliente, fechaVenta, carroCompra, colorCarro, idCarro , valTotal) 
-        VALUES ('$dniClientes', NOW() , '$NombreCarro' , '$colorCarro' , '$idCarro' , $valTotal)";
+        $sql = "INSERT INTO registrocompra (NameCliente, fechaVenta, carroCompra, colorCarro, idCarro , valTotal) 
+        VALUES ('$nameClientes', NOW() , '$NombreCarro' , '$colorCarro' , '$idCarro' , $valTotal)";
 
         if ($conn->query($sql) === TRUE) {
             echo 1;
