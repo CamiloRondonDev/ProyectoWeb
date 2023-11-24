@@ -61,6 +61,7 @@
                 <option class="valNul" value="Clientes">Clientes</option>
                 <option class="valNul" value="Carros">Carros</option>
                 <option class="valNul" value="Ventas">Ventas</option>
+                <option class="valNul" value="EditCarros">Edit Carros</option>
               </select>
             </div>
             <br>

@@ -12,6 +12,8 @@ $(document).ready(function () {
                 console.log(response)
                 if (response == 1) {
                     alert("Usuario Creado Correctamente");
+                    window.location.href = 'index.php';
+                    Limpiar();
                 } else if (response == 2) {
                     alert("Todos los campos son obligatorios");
                 } else {
@@ -27,3 +29,12 @@ $(document).ready(function () {
     });
 
 });
+
+function Limpiar(){
+    document.getElementById("form3Example5").value = "";
+    document.getElementById("form3Example1").value = "";
+    document.getElementById("form3Example2").value = "";
+    document.getElementById("form3Example4").value = "";
+    document.getElementById("form3Example3").value = "";
+    document.getElementById("form3Example5").value = "";
+}

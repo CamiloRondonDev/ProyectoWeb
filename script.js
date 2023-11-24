@@ -14,6 +14,7 @@ $(document).ready(function() {
                 //alert("_Contraseña correcta_")
                 var correo1 = document.getElementById('correo_enviar');
                 var correo = correo1.value;
+                window.miVariableGlobal = correo;
                 window.location.href = 'Ventas.php?correo=' + encodeURIComponent(correo);//enviar correo a la vista 
             }else{
                 alert("_Contraseña incorrecta_")
@@ -33,8 +34,8 @@ $(document).ready(function() {
              console.log(response)
             if(response == 1){
                 alert("_Registro insertado_")
+               // window.location.href = 'Ventas.php?correo=' + encodeURIComponent(miVariableGlobal);//enviar correo a la vista 
                 Limpiar();
-               // window.location.href = 'Ventas.php';
             }else if(response == 2){
                 alert("Ingresa todos los valores")
             }else if(response == 3){
