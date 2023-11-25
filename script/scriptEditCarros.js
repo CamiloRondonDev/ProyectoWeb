@@ -89,7 +89,7 @@ $(document).ready(function () {
     
                     // Manejar la respuesta de la petición AJAX
                     if(response == 1) {
-                        alert("Usuario Actualizado Correctamente");
+                        alert("Carro Actualizado Correctamente");
                         Limpiar();
                     } else if(response == 2) {
                         alert("Todos los campos son obligatorios");
@@ -126,10 +126,6 @@ $(document).ready(function () {
                     console.error('Error en la petición AJAX:', error);
                 }
             });
-    
-    
-    
-    
         }
     
         var boton = document.getElementById("miBoton");

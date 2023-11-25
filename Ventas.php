@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="Index.php">Home</a>
+              <a class="nav-link active" aria-current="page" href="Index.php">Logout</a>
             </li>
             <li class="nav-item">
               <a target="_blank" class="nav-link" href="https://api.whatsapp.com/send?phone=573219255328&text=Estoy%20interesado%20en%20cotizar%20carro.">Contacto</a>

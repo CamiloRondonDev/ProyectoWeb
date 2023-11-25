@@ -79,13 +79,27 @@ function listar(data){
         const Color_Carro = fila.insertCell(4);
         const Fecha_Venta = fila.insertCell(5);
 
+       
+        const valorFormateado = formatoPesoColombiano(venta.valTotal);
+        console.log(valorFormateado)
         // Llenar celdas con valores
         celdaIdVenta.textContent = venta.idCompra;
         celdaComprador.textContent = venta.NameCliente;
         celdaCarros.textContent = venta.carroCompra;
-        celdaValorTotal.textContent = venta.valTotal;
+        celdaValorTotal.textContent = valorFormateado  ;
         Color_Carro.textContent = venta.colorCarro;
         Fecha_Venta.textContent = venta.fechaVenta;
     });
 
 }
+function formatoPesoColombiano(cantidad) {
+    const formato = new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 0,  // Establecer el número mínimo de dígitos fraccionarios a 0
+        maximumFractionDigits: 0 
+    });
+  
+    return formato.format(cantidad);
+  }
+  

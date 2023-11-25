@@ -33,7 +33,7 @@ $(document).ready(function() {
             success: function(response) {
              console.log(response)
             if(response == 1){
-                alert("_Registro insertado_")
+                alert("Carro registrado correctamente")
                // window.location.href = 'Ventas.php?correo=' + encodeURIComponent(miVariableGlobal);//enviar correo a la vista 
                 Limpiar();
             }else if(response == 2){
