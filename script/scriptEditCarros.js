@@ -1,6 +1,6 @@
 // Función para mostrar los usuarios en la lista
 document.getElementById("nombreCarro").setAttribute("disabled", "disabled");
-console.log("entro edit carros_")
+console.log("entro edit carros")
 $(document).ready(function () {
 
     function RealizarConsultaClientes() {
@@ -104,6 +104,37 @@ $(document).ready(function () {
             });
     
              document.getElementById("nombreCarro").setAttribute("disabled", "disabled");
+        });
+
+        function eliminarUser(user){
+       
+            $.ajax({
+                type: 'POST',
+                url: 'modelo/EliminarCarro.php',
+                data: { idUser: user }, // Datos que se enviarán al servidor
+                success: function(response) {
+                 console.log(response)
+                 if(response == 1){
+                    alert("Carro Eliminado Correctamente");
+                    location.reload();//recargar la paguina
+                 }else{
+                    alert("Error interno");
+                 }
+                },
+                error: function (error) {
+                    // Maneja los errores de la petición AJAX
+                    console.error('Error en la petición AJAX:', error);
+                }
+            });
+    
+    
+    
+    
+        }
+    
+        var boton = document.getElementById("miBoton");
+        boton.addEventListener("click", function (event) {
+            eliminarUser(usuarioId);
         });
 
 });

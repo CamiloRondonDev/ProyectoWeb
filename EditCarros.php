@@ -109,6 +109,10 @@
                                 </button>
                             </div>
                         </form>
+
+                        <button id="miBoton" style="width: 400px;" class="btn btn-primary btn-block mb-4 containerm  ">
+                            Eliminar
+                        </button>
                     </div>
                 </div>
             </div>
